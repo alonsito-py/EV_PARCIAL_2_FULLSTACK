@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/autenticacion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bodega/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/carrito/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cliente/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/despacho/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/direccion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/facturacion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/inventario/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/marketing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notificacion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pago/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pedido/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/producto/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/promocion/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/reporte/src/main/java" charset="UTF-8" />
+  </component>
+</project>

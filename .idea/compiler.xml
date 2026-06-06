@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="promocion" />
+        <module name="facturacion" />
+        <module name="autenticacion" />
+        <module name="despacho" />
+        <module name="direccion" />
+        <module name="producto" />
+        <module name="carrito" />
+        <module name="pago" />
+        <module name="bodega" />
+        <module name="notificacion" />
+        <module name="reporte" />
+        <module name="cliente" />
+        <module name="marketing" />
+        <module name="pedido" />
+        <module name="inventario" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="autenticacion" options="-parameters" />
+      <module name="bodega" options="-parameters" />
+      <module name="carrito" options="-parameters" />
+      <module name="cliente" options="-parameters" />
+      <module name="despacho" options="-parameters" />
+      <module name="direccion" options="-parameters" />
+      <module name="facturacion" options="-parameters" />
+      <module name="inventario" options="-parameters" />
+      <module name="marketing" options="-parameters" />
+      <module name="notificacion" options="-parameters" />
+      <module name="pago" options="-parameters" />
+      <module name="pedido" options="-parameters" />
+      <module name="producto" options="-parameters" />
+      <module name="promocion" options="-parameters" />
+      <module name="reporte" options="-parameters" />
+    </option>
+  </component>
+</project>
