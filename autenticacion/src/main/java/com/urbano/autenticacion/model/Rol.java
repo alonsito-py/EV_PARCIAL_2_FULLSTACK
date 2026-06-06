@@ -4,5 +4,5 @@ import lombok.*;
 @Entity @Table(name="roles") @Data @AllArgsConstructor @NoArgsConstructor
 public class Rol {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
-    @Column(nullable=false, unique=true) private String nombre; // ADMIN, CLIENTE
+    @Column(nullable=false, unique=true) private String nombre;
 }

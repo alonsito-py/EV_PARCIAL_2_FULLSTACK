@@ -13,7 +13,7 @@ public class ReporteService {
     @Autowired private ReporteRepository repo;
     public List<CierreVentaDiario> getAll() { return repo.findAll(); }
     public List<CierreVentaDiario> getPorPeriodo(LocalDate inicio, LocalDate fin) { log.info("Reporte periodo {} - {}", inicio, fin); return repo.findByFechaBetween(inicio, fin); }
-    public CierreVentaDiario registrarCierre(CierreDTO dto) {
+    public CierreVentaDiario registrar(CierreDTO dto) {
         log.info("Registrando cierre fecha: {}", dto.getFecha());
         CierreVentaDiario c=new CierreVentaDiario(); c.setFecha(dto.getFecha()); c.setTotalPedidos(dto.getTotalPedidos());
         c.setMontoTotal(dto.getMontoTotal()); c.setObservaciones(dto.getObservaciones()); return repo.save(c);

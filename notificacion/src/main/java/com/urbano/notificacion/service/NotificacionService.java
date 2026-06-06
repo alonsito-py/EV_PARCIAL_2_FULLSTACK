@@ -16,9 +16,8 @@ public class NotificacionService {
         log.info("Enviando notificacion tipo:{} a:{}", dto.getTipoPlantilla(), dto.getDestinatario());
         HistorialNotificacion h=new HistorialNotificacion();
         h.setDestinatario(dto.getDestinatario()); h.setTipoPlantilla(dto.getTipoPlantilla()); h.setMensaje(dto.getMensaje());
-        // Simulación envío (en producción: JavaMail/SendGrid)
         h.setEstadoEnvio("ENVIADO");
-        log.info("Notificacion enviada exitosamente a: {}", dto.getDestinatario());
+        log.info("Notificacion enviada a: {}", dto.getDestinatario());
         return repo.save(h);
     }
 }

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class MovimientoInventario {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(nullable=false) private String sku;
-    @Column(nullable=false) private String tipo; // ENTRADA, SALIDA
+    @Column(nullable=false) private String tipo;
     @Column(nullable=false) private Integer cantidad;
     private String motivo;
     private LocalDateTime fecha = LocalDateTime.now();

@@ -1,4 +1,4 @@
--- Tiendas Urbano - Script de creación de bases de datos
+-- Tiendas Urbano - Script de creacion de bases de datos
 -- Ejecutar en MySQL Workbench antes de iniciar los microservicios
 
 CREATE DATABASE IF NOT EXISTS db_auth;

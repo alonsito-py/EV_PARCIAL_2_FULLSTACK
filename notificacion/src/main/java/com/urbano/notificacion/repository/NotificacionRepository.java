@@ -6,5 +6,4 @@ import java.util.List;
 @Repository
 public interface NotificacionRepository extends JpaRepository<HistorialNotificacion, Long> {
     List<HistorialNotificacion> findByDestinatario(String destinatario);
-    List<HistorialNotificacion> findByTipoPlantilla(String tipo);
 }

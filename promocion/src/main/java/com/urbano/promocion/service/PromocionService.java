@@ -24,7 +24,7 @@ public class PromocionService {
     }
     public Cupon validarCupon(String codigo) {
         Cupon c=cuponRepo.findByCodigo(codigo).orElseThrow(()->new PromocionNotFoundException("Cupon no encontrado: "+codigo));
-        if (!c.isActivo() || c.getUsosActuales()>=c.getUsosMaximos()) throw new RuntimeException("Cupon no válido o agotado: "+codigo);
+        if (!c.isActivo() || c.getUsosActuales()>=c.getUsosMaximos()) throw new RuntimeException("Cupon no valido o agotado: "+codigo);
         c.setUsosActuales(c.getUsosActuales()+1); return cuponRepo.save(c);
     }
 }

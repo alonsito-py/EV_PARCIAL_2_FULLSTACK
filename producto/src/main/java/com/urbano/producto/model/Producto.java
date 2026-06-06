@@ -12,7 +12,6 @@ public class Producto {
     @Column(nullable=false) private String talla;
     @Column(nullable=false) private String color;
     private boolean activo = true;
-    @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="categoria_id", nullable=false)
+    @ManyToOne(fetch=FetchType.EAGER) @JoinColumn(name="categoria_id", nullable=false)
     private Categoria categoria;
 }

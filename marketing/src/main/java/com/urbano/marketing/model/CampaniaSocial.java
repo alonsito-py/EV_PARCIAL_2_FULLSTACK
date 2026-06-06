@@ -6,8 +6,8 @@ import java.time.LocalDate;
 public class CampaniaSocial {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(nullable=false) private String nombre;
-    @Column(nullable=false) private String red; // INSTAGRAM, FACEBOOK, TIKTOK
+    @Column(nullable=false) private String red;
     @Column(nullable=false) private String contenido;
-    @Column(nullable=false) private String estado; // PROGRAMADA, PUBLICADA, CANCELADA
+    @Column(nullable=false) private String estado;
     private LocalDate fechaProgramada;
 }

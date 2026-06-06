@@ -8,7 +8,7 @@ public class TransaccionPago {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(nullable=false) private Long pedidoId;
     @Column(nullable=false) private BigDecimal monto;
-    @Column(nullable=false) private String estadoPago; // PENDIENTE, APROBADO, RECHAZADO
+    @Column(nullable=false) private String estadoPago;
     private String tokenWebpay;
     private LocalDateTime fechaPago = LocalDateTime.now();
 }

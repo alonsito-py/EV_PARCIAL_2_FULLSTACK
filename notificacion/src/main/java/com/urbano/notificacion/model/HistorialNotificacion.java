@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 public class HistorialNotificacion {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(nullable=false) private String destinatario;
-    @Column(nullable=false) private String tipoPlantilla; // REGISTRO, COMPRA_APROBADA, DESPACHO
-    @Column(nullable=false) private String estadoEnvio; // ENVIADO, FALLIDO
+    @Column(nullable=false) private String tipoPlantilla;
+    @Column(nullable=false) private String estadoEnvio;
     private String mensaje;
     private LocalDateTime fechaEnvio = LocalDateTime.now();
 }

@@ -19,15 +19,15 @@ public class InventarioService {
         return repo.save(i);
     }
     public Inventario reducirStock(String sku, Integer cantidad) {
-        log.info("Reduciendo stock sku: {} cantidad: {}", sku, cantidad);
+        log.info("Reduciendo stock sku:{} cantidad:{}", sku, cantidad);
         Inventario i=getBySku(sku);
-        if (i.getCantidadDisponible()<cantidad) throw new RuntimeException("Stock insuficiente para sku: "+sku);
+        if (i.getCantidadDisponible()<cantidad) throw new RuntimeException("Stock insuficiente sku: "+sku);
         i.setCantidadDisponible(i.getCantidadDisponible()-cantidad);
-        if (i.getCantidadDisponible()<=i.getAlertaMinimo()) log.warn("ALERTA STOCK MINIMO sku: {} cantidad: {}", sku, i.getCantidadDisponible());
+        if (i.getCantidadDisponible()<=i.getAlertaMinimo()) log.warn("ALERTA STOCK MINIMO sku:{} cantidad:{}", sku, i.getCantidadDisponible());
         return repo.save(i);
     }
     public Inventario aumentarStock(String sku, Integer cantidad) {
-        log.info("Aumentando stock sku: {} cantidad: {}", sku, cantidad);
+        log.info("Aumentando stock sku:{} cantidad:{}", sku, cantidad);
         Inventario i=getBySku(sku); i.setCantidadDisponible(i.getCantidadDisponible()+cantidad); return repo.save(i);
     }
 }

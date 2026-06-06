@@ -7,7 +7,7 @@ import java.util.List;
 public class Carrito {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(nullable=false) private Long clienteId;
-    @Column(nullable=false) private String estado; // ACTIVO, PROCESADO
+    @Column(nullable=false) private String estado;
     @OneToMany(mappedBy="carrito", cascade=CascadeType.ALL, orphanRemoval=true)
     private List<ItemCarrito> items = new ArrayList<>();
 }

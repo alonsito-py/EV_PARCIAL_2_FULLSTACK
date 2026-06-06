@@ -15,11 +15,10 @@ import java.util.List;
 public class PedidoService {
     @Autowired private PedidoRepository repo;
     @Autowired private WebClient webClientCliente;
-    @Autowired private WebClient webClientInventario;
-    private void verificarCliente(Long clienteId) {
-        try { webClientCliente.get().uri("/api/v1/clientes/"+clienteId).retrieve()
+    private void verificarCliente(Long id) {
+        try { webClientCliente.get().uri("/api/v1/clientes/"+id).retrieve()
             .onStatus(HttpStatusCode::is4xxClientError,r->{throw new RuntimeException("Cliente no existe");}).bodyToMono(Object.class).block();
-        } catch(Exception e) { throw new RuntimeException("Cliente no válido id: "+clienteId); }
+        } catch(Exception e) { throw new RuntimeException("Cliente no valido id: "+id); }
     }
     public List<Pedido> getAll() { return repo.findAll(); }
     public Pedido getById(Long id) { return repo.findById(id).orElseThrow(()->new PedidoNotFoundException("Pedido no encontrado id: "+id)); }
@@ -35,10 +34,7 @@ public class PedidoService {
             total=total.add(d.getPrecioUnitario().multiply(BigDecimal.valueOf(d.getCantidad())));
             p.getDetalles().add(det);
         }
-        p.setTotal(total); Pedido saved=repo.save(p); log.info("Pedido creado id: {} total: {}", saved.getId(), saved.getTotal()); return saved;
+        p.setTotal(total); Pedido saved=repo.save(p); log.info("Pedido creado id:{} total:{}", saved.getId(), saved.getTotal()); return saved;
     }
-    public Pedido cambiarEstado(Long id, String estado) {
-        log.info("Cambiando estado pedido {} a {}", id, estado);
-        Pedido p=getById(id); p.setEstado(estado); return repo.save(p);
-    }
+    public Pedido cambiarEstado(Long id, String estado) { log.info("Cambiando estado pedido {} a {}", id, estado); Pedido p=getById(id); p.setEstado(estado); return repo.save(p); }
 }

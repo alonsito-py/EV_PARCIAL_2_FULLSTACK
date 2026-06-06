@@ -11,5 +11,5 @@ import java.util.List;
 public class PagoController {
     @Autowired private PagoService service;
     @GetMapping("/pedido/{pedidoId}") public ResponseEntity<List<TransaccionPago>> getByPedido(@PathVariable Long pedidoId) { return ResponseEntity.ok(service.getByPedido(pedidoId)); }
-    @PostMapping public ResponseEntity<TransaccionPago> procesar(@Valid @RequestBody PagoDTO dto) { return ResponseEntity.status(HttpStatus.CREATED).body(service.procesarPago(dto)); }
+    @PostMapping public ResponseEntity<TransaccionPago> procesar(@Valid @RequestBody PagoDTO dto) { return ResponseEntity.status(HttpStatus.CREATED).body(service.procesar(dto)); }
 }

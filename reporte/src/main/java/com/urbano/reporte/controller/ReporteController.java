@@ -16,5 +16,5 @@ public class ReporteController {
     @GetMapping("/periodo") public ResponseEntity<List<CierreVentaDiario>> getPeriodo(
         @RequestParam @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate inicio,
         @RequestParam @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate fin) { return ResponseEntity.ok(service.getPorPeriodo(inicio, fin)); }
-    @PostMapping public ResponseEntity<CierreVentaDiario> registrar(@Valid @RequestBody CierreDTO dto) { return ResponseEntity.status(HttpStatus.CREATED).body(service.registrarCierre(dto)); }
+    @PostMapping public ResponseEntity<CierreVentaDiario> registrar(@Valid @RequestBody CierreDTO dto) { return ResponseEntity.status(HttpStatus.CREATED).body(service.registrar(dto)); }
 }

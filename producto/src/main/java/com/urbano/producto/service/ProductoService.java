@@ -1,10 +1,8 @@
 package com.urbano.producto.service;
 import com.urbano.producto.dto.ProductoDTO;
 import com.urbano.producto.exception.ProductoNotFoundException;
-import com.urbano.producto.model.Categoria;
-import com.urbano.producto.model.Producto;
-import com.urbano.producto.repository.CategoriaRepository;
-import com.urbano.producto.repository.ProductoRepository;
+import com.urbano.producto.model.*;
+import com.urbano.producto.repository.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +19,7 @@ public class ProductoService {
     public Producto create(ProductoDTO dto) {
         log.info("Creando producto sku: {}", dto.getSku());
         if (repo.findBySku(dto.getSku()).isPresent()) throw new RuntimeException("SKU ya existe: "+dto.getSku());
-        Categoria cat = catRepo.findById(dto.getCategoriaId()).orElseThrow(()->new RuntimeException("Categoria no encontrada"));
+        Categoria cat=catRepo.findById(dto.getCategoriaId()).orElseThrow(()->new RuntimeException("Categoria no encontrada"));
         Producto p=new Producto(); p.setSku(dto.getSku()); p.setNombre(dto.getNombre()); p.setDescripcion(dto.getDescripcion());
         p.setPrecio(dto.getPrecio()); p.setTalla(dto.getTalla()); p.setColor(dto.getColor()); p.setCategoria(cat);
         return repo.save(p);

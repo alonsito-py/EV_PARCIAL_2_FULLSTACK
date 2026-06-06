@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 @Data @AllArgsConstructor @NoArgsConstructor
 public class PromocionDTO {
-    @NotBlank(message="El nombre es obligatorio") private String nombre;
+    @NotBlank private String nombre;
     @NotNull @DecimalMin("0.01") @DecimalMax("100.00") private BigDecimal descuento;
     @NotNull private LocalDate fechaInicio;
     @NotNull private LocalDate fechaFin;

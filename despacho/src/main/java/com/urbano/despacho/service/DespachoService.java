@@ -17,11 +17,13 @@ public class DespachoService {
     public List<GuiaDespacho> getAll() { return repo.findAll(); }
     public GuiaDespacho getById(Long id) { return repo.findById(id).orElseThrow(()->new DespachoNotFoundException("Despacho no encontrado id: "+id)); }
     public GuiaDespacho crear(GuiaDespachoDTO dto) {
-        log.info("Creando guía despacho pedido: {}", dto.getPedidoId());
+        log.info("Creando guia despacho pedido: {}", dto.getPedidoId());
         GuiaDespacho g=new GuiaDespacho(); g.setPedidoId(dto.getPedidoId()); g.setDireccionDestino(dto.getDireccionDestino());
-        g.setEstado("PREPARANDO"); g.setFechaEstimada(dto.getFechaEstimada()); g.setCodigoSeguimiento(UUID.randomUUID().toString().substring(0,8).toUpperCase());
+        g.setEstado("PREPARANDO"); g.setFechaEstimada(dto.getFechaEstimada());
+        g.setCodigoSeguimiento(UUID.randomUUID().toString().substring(0,8).toUpperCase());
         GuiaDespacho saved=repo.save(g);
-        try { webClientPedido.patch().uri("/api/v1/pedidos/"+dto.getPedidoId()+"/estado?estado=DESPACHADO").retrieve().bodyToMono(Object.class).block(); } catch(Exception e) { log.error("Error actualizando pedido: {}",e.getMessage()); }
+        try { webClientPedido.patch().uri("/api/v1/pedidos/"+dto.getPedidoId()+"/estado?estado=DESPACHADO").retrieve().bodyToMono(Object.class).block(); }
+        catch(Exception e) { log.error("Error actualizando pedido: {}", e.getMessage()); }
         return saved;
     }
     public GuiaDespacho cambiarEstado(Long id, String estado) { GuiaDespacho g=getById(id); g.setEstado(estado); return repo.save(g); }

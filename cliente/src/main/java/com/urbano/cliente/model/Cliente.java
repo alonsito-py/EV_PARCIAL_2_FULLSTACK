@@ -7,6 +7,6 @@ public class Cliente {
     @Column(nullable=false) private String nombre;
     @Column(nullable=false, unique=true) private String correo;
     @Column(nullable=false) private String telefono;
-    @Column(nullable=false) private boolean verificado = false;
-    @Column(nullable=false) private boolean activo = true;
+    private boolean verificado = false;
+    private boolean activo = true;
 }

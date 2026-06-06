@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class GuiaDespacho {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
     @Column(nullable=false) private Long pedidoId;
-    @Column(nullable=false) private String estado; // PREPARANDO, EN_RUTA, ENTREGADO
+    @Column(nullable=false) private String estado;
     @Column(nullable=false) private String direccionDestino;
     private LocalDate fechaEstimada;
     private String codigoSeguimiento;
