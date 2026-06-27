@@ -1,0 +1,32 @@
+2026-06-26T18:47:38.720-04:00  INFO 5976 --- [autenticacion] [main] c.u.a.AutenticacionApplication           : Starting AutenticacionApplication using Java 21.0.11 with PID 5976 (C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL\autenticacion\target\classes started by Andrés in C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL)
+2026-06-26T18:47:38.723-04:00 DEBUG 5976 --- [autenticacion] [main] c.u.a.AutenticacionApplication           : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-06-26T18:47:38.724-04:00  INFO 5976 --- [autenticacion] [main] c.u.a.AutenticacionApplication           : The following 1 profile is active: "dev"
+2026-06-26T18:47:39.999-04:00  INFO 5976 --- [autenticacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T18:47:40.258-04:00  INFO 5976 --- [autenticacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 241 ms. Found 2 JPA repository interfaces.
+2026-06-26T18:47:41.040-04:00  INFO 5976 --- [autenticacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-06-26T18:47:41.064-04:00  INFO 5976 --- [autenticacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T18:47:41.065-04:00  INFO 5976 --- [autenticacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-06-26T18:47:41.155-04:00  INFO 5976 --- [autenticacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-26T18:47:41.156-04:00  INFO 5976 --- [autenticacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2373 ms
+2026-06-26T18:47:41.326-04:00  INFO 5976 --- [autenticacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-26T18:47:41.410-04:00  INFO 5976 --- [autenticacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-06-26T18:47:41.449-04:00  INFO 5976 --- [autenticacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-26T18:47:41.800-04:00  INFO 5976 --- [autenticacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T18:47:41.832-04:00  INFO 5976 --- [autenticacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T18:47:42.223-04:00  INFO 5976 --- [autenticacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56ba8e8c
+2026-06-26T18:47:42.225-04:00  INFO 5976 --- [autenticacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T18:47:42.284-04:00  WARN 5976 --- [autenticacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T18:47:42.286-04:00  WARN 5976 --- [autenticacion] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-06-26T18:47:42.308-04:00  INFO 5976 --- [autenticacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-26T18:47:43.405-04:00  INFO 5976 --- [autenticacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T18:47:43.482-04:00  INFO 5976 --- [autenticacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T18:47:43.979-04:00  WARN 5976 --- [autenticacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T18:47:44.526-04:00  INFO 5976 --- [autenticacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-06-26T18:47:44.534-04:00  INFO 5976 --- [autenticacion] [main] c.u.a.AutenticacionApplication           : Started AutenticacionApplication in 6.659 seconds (process running for 8.049)

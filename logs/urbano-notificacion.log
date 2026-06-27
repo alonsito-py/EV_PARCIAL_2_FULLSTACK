@@ -1,0 +1,32 @@
+2026-06-26T18:51:55.442-04:00  INFO 2504 --- [notificacion] [main] c.u.n.NotificacionApplication            : Starting NotificacionApplication using Java 21.0.11 with PID 2504 (C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL\notificacion\target\classes started by Andrés in C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL)
+2026-06-26T18:51:55.445-04:00 DEBUG 2504 --- [notificacion] [main] c.u.n.NotificacionApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-06-26T18:51:55.446-04:00  INFO 2504 --- [notificacion] [main] c.u.n.NotificacionApplication            : The following 1 profile is active: "dev"
+2026-06-26T18:51:56.739-04:00  INFO 2504 --- [notificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T18:51:56.980-04:00  INFO 2504 --- [notificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 1 JPA repository interface.
+2026-06-26T18:51:57.780-04:00  INFO 2504 --- [notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2026-06-26T18:51:57.804-04:00  INFO 2504 --- [notificacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T18:51:57.804-04:00  INFO 2504 --- [notificacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-06-26T18:51:57.903-04:00  INFO 2504 --- [notificacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-26T18:51:57.904-04:00  INFO 2504 --- [notificacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2395 ms
+2026-06-26T18:51:58.127-04:00  INFO 2504 --- [notificacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-26T18:51:58.220-04:00  INFO 2504 --- [notificacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-06-26T18:51:58.259-04:00  INFO 2504 --- [notificacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-26T18:51:58.600-04:00  INFO 2504 --- [notificacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T18:51:58.633-04:00  INFO 2504 --- [notificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T18:51:59.090-04:00  INFO 2504 --- [notificacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79ec57b8
+2026-06-26T18:51:59.093-04:00  INFO 2504 --- [notificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T18:51:59.158-04:00  WARN 2504 --- [notificacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T18:51:59.159-04:00  WARN 2504 --- [notificacion] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-06-26T18:51:59.178-04:00  INFO 2504 --- [notificacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-26T18:52:00.349-04:00  INFO 2504 --- [notificacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T18:52:00.426-04:00  INFO 2504 --- [notificacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T18:52:00.982-04:00  WARN 2504 --- [notificacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T18:52:01.516-04:00  INFO 2504 --- [notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2026-06-26T18:52:01.524-04:00  INFO 2504 --- [notificacion] [main] c.u.n.NotificacionApplication            : Started NotificacionApplication in 6.83 seconds (process running for 8.916)

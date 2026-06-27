@@ -1,0 +1,32 @@
+2026-06-26T18:49:56.828-04:00  INFO 3092 --- [carrito] [main] com.urbano.carrito.CarritoApplication    : Starting CarritoApplication using Java 21.0.11 with PID 3092 (C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL\carrito\target\classes started by Andrés in C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL)
+2026-06-26T18:49:56.832-04:00 DEBUG 3092 --- [carrito] [main] com.urbano.carrito.CarritoApplication    : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-06-26T18:49:56.833-04:00  INFO 3092 --- [carrito] [main] com.urbano.carrito.CarritoApplication    : The following 1 profile is active: "dev"
+2026-06-26T18:49:58.050-04:00  INFO 3092 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T18:49:58.282-04:00  INFO 3092 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 1 JPA repository interface.
+2026-06-26T18:49:59.039-04:00  INFO 3092 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2026-06-26T18:49:59.059-04:00  INFO 3092 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T18:49:59.059-04:00  INFO 3092 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-06-26T18:49:59.149-04:00  INFO 3092 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-26T18:49:59.150-04:00  INFO 3092 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2253 ms
+2026-06-26T18:49:59.369-04:00  INFO 3092 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-26T18:49:59.447-04:00  INFO 3092 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-06-26T18:49:59.486-04:00  INFO 3092 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-26T18:49:59.774-04:00  INFO 3092 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T18:49:59.803-04:00  INFO 3092 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T18:50:00.156-04:00  INFO 3092 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a878778
+2026-06-26T18:50:00.158-04:00  INFO 3092 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T18:50:00.207-04:00  WARN 3092 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T18:50:00.209-04:00  WARN 3092 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-06-26T18:50:00.226-04:00  INFO 3092 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-26T18:50:01.291-04:00  INFO 3092 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T18:50:01.362-04:00  INFO 3092 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T18:50:02.055-04:00  WARN 3092 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T18:50:02.678-04:00  INFO 3092 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
+2026-06-26T18:50:02.689-04:00  INFO 3092 --- [carrito] [main] com.urbano.carrito.CarritoApplication    : Started CarritoApplication in 6.846 seconds (process running for 8.24)

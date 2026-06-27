@@ -1,0 +1,92 @@
+# ============================================================
+# Perfil: prod (Railway / Render)
+# Las URLs de los microservicios se obtienen de variables de
+# entorno inyectadas por la plataforma PaaS.
+# ============================================================
+server:
+  port: ${PORT:8080}
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: autenticacion-service
+          uri: ${AUTENTICACION_URL:http://localhost:8081}
+          predicates:
+            - Path=/api/v1/usuarios/**, /api/v2/usuarios/**
+
+        - id: cliente-service
+          uri: ${CLIENTE_URL:http://localhost:8082}
+          predicates:
+            - Path=/api/v1/clientes/**, /api/v2/clientes/**
+
+        - id: direccion-service
+          uri: ${DIRECCION_URL:http://localhost:8083}
+          predicates:
+            - Path=/api/v1/direcciones/**, /api/v2/direcciones/**
+
+        - id: producto-service
+          uri: ${PRODUCTO_URL:http://localhost:8084}
+          predicates:
+            - Path=/api/v1/productos/**, /api/v2/productos/**
+
+        - id: inventario-service
+          uri: ${INVENTARIO_URL:http://localhost:8085}
+          predicates:
+            - Path=/api/v1/inventario/**, /api/v2/inventario/**
+
+        - id: promocion-service
+          uri: ${PROMOCION_URL:http://localhost:8086}
+          predicates:
+            - Path=/api/v1/promociones/**, /api/v2/promociones/**
+
+        - id: carrito-service
+          uri: ${CARRITO_URL:http://localhost:8087}
+          predicates:
+            - Path=/api/v1/carrito/**, /api/v2/carrito/**
+
+        - id: pedido-service
+          uri: ${PEDIDO_URL:http://localhost:8088}
+          predicates:
+            - Path=/api/v1/pedidos/**, /api/v2/pedidos/**
+
+        - id: pago-service
+          uri: ${PAGO_URL:http://localhost:8089}
+          predicates:
+            - Path=/api/v1/pagos/**, /api/v2/pagos/**
+
+        - id: bodega-service
+          uri: ${BODEGA_URL:http://localhost:8090}
+          predicates:
+            - Path=/api/v1/bodega/**, /api/v2/bodega/**
+
+        - id: despacho-service
+          uri: ${DESPACHO_URL:http://localhost:8091}
+          predicates:
+            - Path=/api/v1/despacho/**, /api/v2/despacho/**
+
+        - id: notificacion-service
+          uri: ${NOTIFICACION_URL:http://localhost:8092}
+          predicates:
+            - Path=/api/v1/notificaciones/**, /api/v2/notificaciones/**
+
+        - id: facturacion-service
+          uri: ${FACTURACION_URL:http://localhost:8093}
+          predicates:
+            - Path=/api/v1/facturacion/**, /api/v2/facturacion/**
+
+        - id: reporte-service
+          uri: ${REPORTE_URL:http://localhost:8094}
+          predicates:
+            - Path=/api/v1/reportes/**, /api/v2/reportes/**
+
+        - id: marketing-service
+          uri: ${MARKETING_URL:http://localhost:8095}
+          predicates:
+            - Path=/api/v1/marketing/**, /api/v2/marketing/**

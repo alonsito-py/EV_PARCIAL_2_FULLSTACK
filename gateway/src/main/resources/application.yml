@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: urbano-gateway
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, gateway
+  endpoint:
+    gateway:
+      enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /doc/swagger-ui.html
+    urls:
+      - name: Autenticación
+        url: /aggregate/autenticacion/v3/api-docs
+      - name: Cliente
+        url: /aggregate/cliente/v3/api-docs
+      - name: Dirección
+        url: /aggregate/direccion/v3/api-docs
+      - name: Producto
+        url: /aggregate/producto/v3/api-docs
+      - name: Inventario
+        url: /aggregate/inventario/v3/api-docs
+      - name: Carrito
+        url: /aggregate/carrito/v3/api-docs
+      - name: Pedido
+        url: /aggregate/pedido/v3/api-docs
+      - name: Pago
+        url: /aggregate/pago/v3/api-docs
+      - name: Bodega
+        url: /aggregate/bodega/v3/api-docs
+      - name: Despacho
+        url: /aggregate/despacho/v3/api-docs
+      - name: Notificación
+        url: /aggregate/notificacion/v3/api-docs
+      - name: Facturación
+        url: /aggregate/facturacion/v3/api-docs
+      - name: Reporte
+        url: /aggregate/reporte/v3/api-docs
+      - name: Marketing
+        url: /aggregate/marketing/v3/api-docs
+      - name: Promoción
+        url: /aggregate/promocion/v3/api-docs

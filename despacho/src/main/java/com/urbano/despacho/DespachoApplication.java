@@ -1,0 +1,5 @@
+package com.urbano.despacho;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class DespachoApplication { public static void main(String[] a) { SpringApplication.run(DespachoApplication.class, a); } }

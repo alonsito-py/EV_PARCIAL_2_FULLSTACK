@@ -1,0 +1,32 @@
+2026-06-26T18:52:55.815-04:00  INFO 9012 --- [marketing] [main] c.urbano.marketing.MarketingApplication  : Starting MarketingApplication using Java 21.0.11 with PID 9012 (C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL\marketing\target\classes started by Andrés in C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL)
+2026-06-26T18:52:55.817-04:00 DEBUG 9012 --- [marketing] [main] c.urbano.marketing.MarketingApplication  : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-06-26T18:52:55.818-04:00  INFO 9012 --- [marketing] [main] c.urbano.marketing.MarketingApplication  : The following 1 profile is active: "dev"
+2026-06-26T18:52:57.163-04:00  INFO 9012 --- [marketing] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T18:52:57.355-04:00  INFO 9012 --- [marketing] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 179 ms. Found 1 JPA repository interface.
+2026-06-26T18:52:58.190-04:00  INFO 9012 --- [marketing] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8095 (http)
+2026-06-26T18:52:58.205-04:00  INFO 9012 --- [marketing] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T18:52:58.206-04:00  INFO 9012 --- [marketing] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-06-26T18:52:58.275-04:00  INFO 9012 --- [marketing] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-26T18:52:58.276-04:00  INFO 9012 --- [marketing] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2394 ms
+2026-06-26T18:52:58.449-04:00  INFO 9012 --- [marketing] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-26T18:52:58.538-04:00  INFO 9012 --- [marketing] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-06-26T18:52:58.583-04:00  INFO 9012 --- [marketing] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-26T18:52:58.917-04:00  INFO 9012 --- [marketing] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T18:52:58.962-04:00  INFO 9012 --- [marketing] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T18:52:59.370-04:00  INFO 9012 --- [marketing] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1191029d
+2026-06-26T18:52:59.372-04:00  INFO 9012 --- [marketing] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T18:52:59.424-04:00  WARN 9012 --- [marketing] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T18:52:59.426-04:00  WARN 9012 --- [marketing] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-06-26T18:52:59.446-04:00  INFO 9012 --- [marketing] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-26T18:53:00.426-04:00  INFO 9012 --- [marketing] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T18:53:00.477-04:00  INFO 9012 --- [marketing] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T18:53:00.945-04:00  WARN 9012 --- [marketing] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T18:53:01.508-04:00  INFO 9012 --- [marketing] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8095 (http) with context path '/'
+2026-06-26T18:53:01.517-04:00  INFO 9012 --- [marketing] [main] c.urbano.marketing.MarketingApplication  : Started MarketingApplication in 6.592 seconds (process running for 7.674)

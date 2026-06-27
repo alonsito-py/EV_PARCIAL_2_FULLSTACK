@@ -1,0 +1,35 @@
+2026-06-26T18:50:19.655-04:00  INFO 5368 --- [pedido] [main] com.urbano.pedido.PedidoApplication      : Starting PedidoApplication using Java 21.0.11 with PID 5368 (C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL\pedido\target\classes started by Andrés in C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL)
+2026-06-26T18:50:19.658-04:00 DEBUG 5368 --- [pedido] [main] com.urbano.pedido.PedidoApplication      : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-06-26T18:50:19.659-04:00  INFO 5368 --- [pedido] [main] com.urbano.pedido.PedidoApplication      : The following 1 profile is active: "dev"
+2026-06-26T18:50:20.936-04:00  INFO 5368 --- [pedido] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T18:50:21.179-04:00  INFO 5368 --- [pedido] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 229 ms. Found 1 JPA repository interface.
+2026-06-26T18:50:21.955-04:00  INFO 5368 --- [pedido] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2026-06-26T18:50:21.972-04:00  INFO 5368 --- [pedido] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T18:50:21.973-04:00  INFO 5368 --- [pedido] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-06-26T18:50:22.066-04:00  INFO 5368 --- [pedido] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-26T18:50:22.066-04:00  INFO 5368 --- [pedido] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2341 ms
+2026-06-26T18:50:22.256-04:00  INFO 5368 --- [pedido] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-26T18:50:22.313-04:00  INFO 5368 --- [pedido] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-06-26T18:50:22.355-04:00  INFO 5368 --- [pedido] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-26T18:50:22.658-04:00  INFO 5368 --- [pedido] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T18:50:22.689-04:00  INFO 5368 --- [pedido] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T18:50:23.037-04:00  INFO 5368 --- [pedido] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53e82089
+2026-06-26T18:50:23.038-04:00  INFO 5368 --- [pedido] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T18:50:23.089-04:00  WARN 5368 --- [pedido] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T18:50:23.090-04:00  WARN 5368 --- [pedido] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-06-26T18:50:23.107-04:00  INFO 5368 --- [pedido] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-26T18:50:24.150-04:00  INFO 5368 --- [pedido] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T18:50:24.223-04:00  INFO 5368 --- [pedido] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T18:50:24.935-04:00  WARN 5368 --- [pedido] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T18:50:25.427-04:00  INFO 5368 --- [pedido] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8088 (http) with context path '/'
+2026-06-26T18:50:25.436-04:00  INFO 5368 --- [pedido] [main] com.urbano.pedido.PedidoApplication      : Started PedidoApplication in 6.591 seconds (process running for 7.578)
+2026-06-26T22:05:06.439-04:00  INFO 5368 --- [pedido] [http-nio-8088-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-26T22:05:06.494-04:00  INFO 5368 --- [pedido] [http-nio-8088-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-26T22:05:06.780-04:00  INFO 5368 --- [pedido] [http-nio-8088-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 277 ms

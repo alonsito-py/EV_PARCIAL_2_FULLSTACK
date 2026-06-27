@@ -1,0 +1,74 @@
+# ============================================================
+# Microservicio: facturacion  |  Puerto: 8093
+# ============================================================
+spring:
+  application:
+    name: urbano-facturacion
+  profiles:
+    active: dev
+
+server:
+  port: 8093
+
+---
+# Perfil: dev (desarrollo local)
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_facturacion
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+  level:
+    root: INFO
+    com.urbano.facturacion: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%-5level] %logger{36} - %msg%n"
+  file:
+    name: logs/urbano-facturacion.log
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+
+---
+# Perfil: prod (Railway / Render)
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: ${PORT:8093}
+
+logging:
+  level:
+    root: WARN
+    com.urbano.facturacion: INFO

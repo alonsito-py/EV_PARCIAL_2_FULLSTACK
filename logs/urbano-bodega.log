@@ -1,0 +1,32 @@
+2026-06-26T18:51:15.977-04:00  INFO 6888 --- [bodega] [main] com.urbano.bodega.BodegaApplication      : Starting BodegaApplication using Java 21.0.11 with PID 6888 (C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL\bodega\target\classes started by Andrés in C:\Users\Andrés\Downloads\urbano_evaluacion_parcial3_FINAL)
+2026-06-26T18:51:15.979-04:00 DEBUG 6888 --- [bodega] [main] com.urbano.bodega.BodegaApplication      : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-06-26T18:51:15.980-04:00  INFO 6888 --- [bodega] [main] com.urbano.bodega.BodegaApplication      : The following 1 profile is active: "dev"
+2026-06-26T18:51:17.278-04:00  INFO 6888 --- [bodega] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T18:51:17.522-04:00  INFO 6888 --- [bodega] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 229 ms. Found 1 JPA repository interface.
+2026-06-26T18:51:18.371-04:00  INFO 6888 --- [bodega] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2026-06-26T18:51:18.391-04:00  INFO 6888 --- [bodega] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T18:51:18.391-04:00  INFO 6888 --- [bodega] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-06-26T18:51:18.487-04:00  INFO 6888 --- [bodega] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-26T18:51:18.487-04:00  INFO 6888 --- [bodega] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2441 ms
+2026-06-26T18:51:18.732-04:00  INFO 6888 --- [bodega] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-26T18:51:18.832-04:00  INFO 6888 --- [bodega] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-06-26T18:51:18.887-04:00  INFO 6888 --- [bodega] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-26T18:51:19.223-04:00  INFO 6888 --- [bodega] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T18:51:19.258-04:00  INFO 6888 --- [bodega] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T18:51:19.729-04:00  INFO 6888 --- [bodega] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12200670
+2026-06-26T18:51:19.731-04:00  INFO 6888 --- [bodega] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T18:51:19.788-04:00  WARN 6888 --- [bodega] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T18:51:19.789-04:00  WARN 6888 --- [bodega] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-06-26T18:51:19.810-04:00  INFO 6888 --- [bodega] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-26T18:51:20.804-04:00  INFO 6888 --- [bodega] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T18:51:20.868-04:00  INFO 6888 --- [bodega] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T18:51:21.579-04:00  WARN 6888 --- [bodega] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T18:51:22.074-04:00  INFO 6888 --- [bodega] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2026-06-26T18:51:22.087-04:00  INFO 6888 --- [bodega] [main] com.urbano.bodega.BodegaApplication      : Started BodegaApplication in 6.915 seconds (process running for 7.962)

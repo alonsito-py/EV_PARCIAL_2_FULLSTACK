@@ -1,0 +1,318 @@
+
+version: '3.9'
+
+networks:
+  urbano-net:
+    driver: bridge
+
+volumes:
+  mysql_data:
+
+services:
+
+  # ─── Base de datos MySQL compartida ──────────────────────
+  mysql:
+    image: mysql:8.0
+    container_name: urbano-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_auth
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init_databases.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - urbano-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ─── Microservicios ──────────────────────────────────────
+  autenticacion:
+    build: ./autenticacion
+    container_name: urbano-autenticacion
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_auth
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8081"
+    ports:
+      - "8081:8081"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  cliente:
+    build: ./cliente
+    container_name: urbano-cliente
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_clientes
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8082"
+    ports:
+      - "8082:8082"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  direccion:
+    build: ./direccion
+    container_name: urbano-direccion
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_direcciones
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8083"
+    ports:
+      - "8083:8083"
+    depends_on:
+      - cliente
+    networks:
+      - urbano-net
+
+  producto:
+    build: ./producto
+    container_name: urbano-producto
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_productos
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8084"
+    ports:
+      - "8084:8084"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  inventario:
+    build: ./inventario
+    container_name: urbano-inventario
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_inventario
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8085"
+    ports:
+      - "8085:8085"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  promocion:
+    build: ./promocion
+    container_name: urbano-promocion
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_promociones
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8086"
+    ports:
+      - "8086:8086"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  carrito:
+    build: ./carrito
+    container_name: urbano-carrito
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_carrito
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8087"
+      INVENTARIO_URL: http://inventario:8085
+    ports:
+      - "8087:8087"
+    depends_on:
+      - inventario
+    networks:
+      - urbano-net
+
+  pedido:
+    build: ./pedido
+    container_name: urbano-pedido
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_pedidos
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8088"
+      CLIENTE_URL: http://cliente:8082
+    ports:
+      - "8088:8088"
+    depends_on:
+      - cliente
+    networks:
+      - urbano-net
+
+  pago:
+    build: ./pago
+    container_name: urbano-pago
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_pagos
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8089"
+      PEDIDO_URL: http://pedido:8088
+    ports:
+      - "8089:8089"
+    depends_on:
+      - pedido
+    networks:
+      - urbano-net
+
+  bodega:
+    build: ./bodega
+    container_name: urbano-bodega
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_bodega
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8090"
+      INVENTARIO_URL: http://inventario:8085
+    ports:
+      - "8090:8090"
+    depends_on:
+      - inventario
+    networks:
+      - urbano-net
+
+  despacho:
+    build: ./despacho
+    container_name: urbano-despacho
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_despachos
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8091"
+      PEDIDO_URL: http://pedido:8088
+    ports:
+      - "8091:8091"
+    depends_on:
+      - pedido
+    networks:
+      - urbano-net
+
+  notificacion:
+    build: ./notificacion
+    container_name: urbano-notificacion
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_notificaciones
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8092"
+    ports:
+      - "8092:8092"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  facturacion:
+    build: ./facturacion
+    container_name: urbano-facturacion
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_facturacion
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8093"
+    ports:
+      - "8093:8093"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  reporte:
+    build: ./reporte
+    container_name: urbano-reporte
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_reportes
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8094"
+    ports:
+      - "8094:8094"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  marketing:
+    build: ./marketing
+    container_name: urbano-marketing
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/db_marketing
+      DB_USER: root
+      DB_PASS: root
+      SPRING_PROFILE: prod
+      PORT: "8095"
+    ports:
+      - "8095:8095"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - urbano-net
+
+  # ─── API Gateway ─────────────────────────────────────────
+  gateway:
+    build: ./gateway
+    container_name: urbano-gateway
+    environment:
+      SPRING_PROFILE: prod
+      PORT: "8080"
+      AUTENTICACION_URL: http://autenticacion:8081
+      CLIENTE_URL: http://cliente:8082
+      DIRECCION_URL: http://direccion:8083
+      PRODUCTO_URL: http://producto:8084
+      INVENTARIO_URL: http://inventario:8085
+      PROMOCION_URL: http://promocion:8086
+      CARRITO_URL: http://carrito:8087
+      PEDIDO_URL: http://pedido:8088
+      PAGO_URL: http://pago:8089
+      BODEGA_URL: http://bodega:8090
+      DESPACHO_URL: http://despacho:8091
+      NOTIFICACION_URL: http://notificacion:8092
+      FACTURACION_URL: http://facturacion:8093
+      REPORTE_URL: http://reporte:8094
+      MARKETING_URL: http://marketing:8095
+    ports:
+      - "8080:8080"
+    depends_on:
+      - autenticacion
+      - cliente
+      - producto
+      - inventario
+    networks:
+      - urbano-net
